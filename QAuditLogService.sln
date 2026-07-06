@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QAuditLogService.API", "QAuditLogService.API", "{E9E85243-73F1-4CA1-A275-A995A2B46D0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QAuditLogService.Application", "QAuditLogService.Application", "{817123AB-417F-43AF-99C7-5E9D35E4B2DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QAuditLogService.Domain", "QAuditLogService.Domain", "{E0C7D2D7-7BB5-4E8C-9A9A-A5D208FF0E16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QAuditLogService.Infrastructure", "QAuditLogService.Infrastructure", "{C4925A47-7B05-49B9-A72D-AA824C7A9B70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAuditLogService.API", "QAuditLogService.API\QAuditLogService.API.csproj", "{DB5A299C-6B20-4CBE-BD4D-11C5749F8293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAuditLogService.Application", "QAuditLogService.Application\QAuditLogService.Application.csproj", "{0A492C22-F0D1-4A6A-ACCC-193917A9E863}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAuditLogService.Domain", "QAuditLogService.Domain\QAuditLogService.Domain.csproj", "{15F459C7-C064-4F8F-B984-0E0685FDEDFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAuditLogService.Infrastructure", "QAuditLogService.Infrastructure\QAuditLogService.Infrastructure.csproj", "{156CEBEC-D1C3-4198-A6FE-FED349E459DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QAuditLogService.Contracts", "QAuditLogService.Contracts", "{D9B392CD-06DD-4790-AB3A-D203B227D7E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAuditLogService.Contracts", "QAuditLogService.Contracts\QAuditLogService.Contracts.csproj", "{395238B1-44D8-4B0C-9DC6-30269BC82FA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB5A299C-6B20-4CBE-BD4D-11C5749F8293} = {E9E85243-73F1-4CA1-A275-A995A2B46D0E}
+		{0A492C22-F0D1-4A6A-ACCC-193917A9E863} = {817123AB-417F-43AF-99C7-5E9D35E4B2DE}
+		{15F459C7-C064-4F8F-B984-0E0685FDEDFD} = {E0C7D2D7-7BB5-4E8C-9A9A-A5D208FF0E16}
+		{156CEBEC-D1C3-4198-A6FE-FED349E459DE} = {C4925A47-7B05-49B9-A72D-AA824C7A9B70}
+		{395238B1-44D8-4B0C-9DC6-30269BC82FA1} = {D9B392CD-06DD-4790-AB3A-D203B227D7E3}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB5A299C-6B20-4CBE-BD4D-11C5749F8293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB5A299C-6B20-4CBE-BD4D-11C5749F8293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB5A299C-6B20-4CBE-BD4D-11C5749F8293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB5A299C-6B20-4CBE-BD4D-11C5749F8293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A492C22-F0D1-4A6A-ACCC-193917A9E863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A492C22-F0D1-4A6A-ACCC-193917A9E863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A492C22-F0D1-4A6A-ACCC-193917A9E863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A492C22-F0D1-4A6A-ACCC-193917A9E863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15F459C7-C064-4F8F-B984-0E0685FDEDFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F459C7-C064-4F8F-B984-0E0685FDEDFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F459C7-C064-4F8F-B984-0E0685FDEDFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F459C7-C064-4F8F-B984-0E0685FDEDFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{156CEBEC-D1C3-4198-A6FE-FED349E459DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{156CEBEC-D1C3-4198-A6FE-FED349E459DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{156CEBEC-D1C3-4198-A6FE-FED349E459DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{156CEBEC-D1C3-4198-A6FE-FED349E459DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{395238B1-44D8-4B0C-9DC6-30269BC82FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{395238B1-44D8-4B0C-9DC6-30269BC82FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{395238B1-44D8-4B0C-9DC6-30269BC82FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{395238B1-44D8-4B0C-9DC6-30269BC82FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
