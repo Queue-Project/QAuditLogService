@@ -18,5 +18,8 @@ public class AuditLogTableConfiguration: IEntityTypeConfiguration<AuditLog>
 
         builder.Property(s => s.AuditLogDetails)
             .HasColumnType("jsonb");
+
+        builder.Property(s => s.Action)
+            .IsRequired();
     }
 }

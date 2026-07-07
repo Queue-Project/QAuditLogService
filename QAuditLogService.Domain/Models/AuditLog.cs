@@ -1,4 +1,3 @@
-using QAuditLogService.Domain.Enums;
 
 namespace QAuditLogService.Domain.Models;
 
@@ -9,7 +8,7 @@ public class AuditLog
     public int? UserId { get; set; }
     public string? UserName { get; set; }
 
-    public AuditAction Action { get; set; }
+    public string Action { get; set; }
 
     public string ServiceName { get; set; }
 
@@ -17,10 +16,8 @@ public class AuditLog
 
     public int? EntityId { get; set; }
 
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime OccuredAt { get; set; } = DateTime.UtcNow;
     
     public List<AuditLogDetails> AuditLogDetails { get; set; } = [];
-
-    public bool IsSuccess { get; set; } = true;
-    public string? ErrorMessage { get; set; }
+    
 }
