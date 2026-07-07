@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using QAuditLogService.Domain.Models;
+using QAuditLogService.Contracts;
 using QAuditLogService.Infrastructure.Persistence.Database;
 
 #nullable disable
@@ -36,7 +36,7 @@ namespace QAuditLogService.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<List<AuditLogDetails>>("AuditLogDetails")
+                    b.Property<List<AuditEventLogDetails>>("AuditLogDetails")
                         .IsRequired()
                         .HasColumnType("jsonb");
 

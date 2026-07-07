@@ -1,4 +1,6 @@
 
+using QAuditLogService.Contracts;
+
 namespace QAuditLogService.Domain.Models;
 
 public class AuditLog
@@ -18,6 +20,6 @@ public class AuditLog
 
     public DateTime OccuredAt { get; set; } = DateTime.UtcNow;
     
-    public List<AuditLogDetails> AuditLogDetails { get; set; } = [];
+    public List<AuditEventLogDetails> AuditLogDetails { get; set; } = [];
     
 }

@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using QAuditLogService.Domain.Models;
+using QAuditLogService.Contracts;
 
 #nullable disable
 
 namespace QAuditLogService.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateAuditTable : Migration
+    public partial class CreateTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,14 +22,12 @@ namespace QAuditLogService.Infrastructure.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: true),
                     UserName = table.Column<string>(type: "text", nullable: true),
-                    Action = table.Column<int>(type: "integer", nullable: false),
+                    Action = table.Column<string>(type: "text", nullable: false),
                     ServiceName = table.Column<string>(type: "text", nullable: false),
                     EntityName = table.Column<string>(type: "text", nullable: false),
                     EntityId = table.Column<int>(type: "integer", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    AuditLogDetails = table.Column<List<AuditLogDetails>>(type: "jsonb", nullable: false),
-                    IsSuccess = table.Column<bool>(type: "boolean", nullable: false),
-                    ErrorMessage = table.Column<string>(type: "text", nullable: true)
+                    OccuredAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    AuditLogDetails = table.Column<List<AuditEventLogDetails>>(type: "jsonb", nullable: false)
                 },
                 constraints: table =>
                 {

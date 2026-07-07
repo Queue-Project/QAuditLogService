@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using QAuditLogService.Domain.Models;
+using QAuditLogService.Contracts;
 using QAuditLogService.Infrastructure.Persistence.Database;
 
 #nullable disable
@@ -14,8 +14,8 @@ using QAuditLogService.Infrastructure.Persistence.Database;
 namespace QAuditLogService.Infrastructure.Migrations
 {
     [DbContext(typeof(AuditLogDbContext))]
-    [Migration("20260706102531_ChangedActionType")]
-    partial class ChangedActionType
+    [Migration("20260707065418_CreateTable")]
+    partial class CreateTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,12 +39,9 @@ namespace QAuditLogService.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<List<AuditLogDetails>>("AuditLogDetails")
+                    b.Property<List<AuditEventLogDetails>>("AuditLogDetails")
                         .IsRequired()
                         .HasColumnType("jsonb");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int?>("EntityId")
                         .HasColumnType("integer");
@@ -53,11 +50,8 @@ namespace QAuditLogService.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ErrorMessage")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("IsSuccess")
-                        .HasColumnType("boolean");
+                    b.Property<DateTime>("OccuredAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("ServiceName")
                         .IsRequired()
