@@ -27,8 +27,4 @@
       <PackageReference Include="UserService.Contracts" Version="1.0.3" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Consumers\QueueService\" />
-    </ItemGroup>
-
 </Project>
