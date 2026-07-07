@@ -1,37 +1,35 @@
-using BranchService.Contracts.Events.CompanyEvents;
+using BranchService.Contracts.Events.CompanyServiceEvents;
 using MassTransit;
 using Microsoft.Extensions.Logging;
 using QAuditLogService.Application.Interfaces;
 using QAuditLogService.Domain.Models;
 
+namespace QAuditLogService.Application.Consumers.BranchService.CompanyServiceConsumers;
 
-namespace QAuditLogService.Application.Consumers.BranchService.CompanyConsumers;
-
-public class CompanyCreatedEventConsumer : IConsumer<CompanyCreatedEvent>
+public class CompanyServiceUpdatedEventConsumer: IConsumer<CompanyServiceUpdatedEvent>
 {
-    private readonly ILogger<CompanyCreatedEventConsumer> _logger;
+    private readonly ILogger<CompanyServiceUpdatedEventConsumer> _logger;
     private readonly IAuditLogDbContext _dbContext;
 
-
-    public CompanyCreatedEventConsumer(IAuditLogDbContext dbContext, ILogger<CompanyCreatedEventConsumer> logger)
+    public CompanyServiceUpdatedEventConsumer(ILogger<CompanyServiceUpdatedEventConsumer> logger, IAuditLogDbContext dbContext)
     {
-        _dbContext = dbContext;
         _logger = logger;
+        _dbContext = dbContext;
     }
 
-    public async Task Consume(ConsumeContext<CompanyCreatedEvent> context)
+    public async Task Consume(ConsumeContext<CompanyServiceUpdatedEvent> context)
     {
         var request = context.Message;
-        _logger.LogInformation("Creating audit log for Company Entity ");
+        _logger.LogInformation("Creating audit log for Company Service Entity ");
 
         var auditLog = new AuditLog
         {
             OccurredAt = request.OccuredAt.DateTime,
             UserId = request.AuditData!.PerformedByUserId,
             UserName = request.AuditData!.PerformedByUserName,
-            EntityId = request.CompanyId,
-            EntityName = "Company",
-            Action = "company.created",
+            EntityId = request.CompanyServiceId,
+            EntityName = "CompanyService",
+            Action = "company.service.updated",
             ServiceName = "BranchService",
             AuditLogDetails = request.AuditData!.Changes
         };

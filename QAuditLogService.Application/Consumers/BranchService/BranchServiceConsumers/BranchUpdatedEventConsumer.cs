@@ -1,37 +1,35 @@
-using BranchService.Contracts.Events.CompanyEvents;
+using BranchService.Contracts.Events.BranchEvents;
 using MassTransit;
 using Microsoft.Extensions.Logging;
 using QAuditLogService.Application.Interfaces;
 using QAuditLogService.Domain.Models;
 
+namespace QAuditLogService.Application.Consumers.BranchService.BranchServiceConsumers;
 
-namespace QAuditLogService.Application.Consumers.BranchService.CompanyConsumers;
-
-public class CompanyCreatedEventConsumer : IConsumer<CompanyCreatedEvent>
+public class BranchUpdatedEventConsumer: IConsumer<BranchUpdatedEvent>
 {
-    private readonly ILogger<CompanyCreatedEventConsumer> _logger;
+    private readonly ILogger<BranchUpdatedEventConsumer> _logger;
     private readonly IAuditLogDbContext _dbContext;
 
-
-    public CompanyCreatedEventConsumer(IAuditLogDbContext dbContext, ILogger<CompanyCreatedEventConsumer> logger)
+    public BranchUpdatedEventConsumer(ILogger<BranchUpdatedEventConsumer> logger, IAuditLogDbContext dbContext)
     {
-        _dbContext = dbContext;
         _logger = logger;
+        _dbContext = dbContext;
     }
 
-    public async Task Consume(ConsumeContext<CompanyCreatedEvent> context)
+    public async Task Consume(ConsumeContext<BranchUpdatedEvent> context)
     {
         var request = context.Message;
-        _logger.LogInformation("Creating audit log for Company Entity ");
+        _logger.LogInformation("Creating audit log for Branch Entity ");
 
         var auditLog = new AuditLog
         {
             OccurredAt = request.OccuredAt.DateTime,
             UserId = request.AuditData!.PerformedByUserId,
             UserName = request.AuditData!.PerformedByUserName,
-            EntityId = request.CompanyId,
-            EntityName = "Company",
-            Action = "company.created",
+            EntityId = request.BranchId,
+            EntityName = "Branch",
+            Action = "branch.updated",
             ServiceName = "BranchService",
             AuditLogDetails = request.AuditData!.Changes
         };
