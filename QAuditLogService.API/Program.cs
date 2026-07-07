@@ -1,6 +1,7 @@
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
+using QAuditLogService.Application;
 using QAuditLogService.Application.Consumers.BranchService.BranchServiceConsumers;
 using QAuditLogService.Application.Consumers.BranchService.CompanyConsumers;
 using QAuditLogService.Application.Consumers.BranchService.CompanyServiceConsumers;
@@ -62,6 +63,7 @@ builder.Services.AddMassTransit(x =>
     });
 });
 
+builder.Services.AddApplicationService();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
@@ -84,5 +86,5 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
+app.MapControllers();
 app.Run();
