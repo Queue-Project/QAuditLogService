@@ -2,6 +2,7 @@ using MassTransit;
 using Microsoft.Extensions.Logging;
 using QAuditLogService.Application.Interfaces;
 using QAuditLogService.Domain.Models;
+using QContracts.Enums;
 using QContracts.Events.ComplaintEvents;
 
 namespace QAuditLogService.Application.Consumers.QueueService.ComplaintConsumers;
@@ -22,6 +23,17 @@ public class ComplaintUpdatedEventConsumer: IConsumer<ComplaintUpdatedEvent>
         var request = context.Message;
         _logger.LogInformation("Creating audit log for Complaint Entity ");
 
+        string action = "";
+        if (request.CurrentComplaintStatus== CurrentComplaintStatus.Reviewed)
+        {
+            action = "complaint.updated.to.reviewed";
+        }
+        else if (request.CurrentComplaintStatus== CurrentComplaintStatus.Resolved)
+        {
+            action = "complaint.updated.to.resolved";
+            
+        }
+        
         var auditLog = new AuditLog
         {
             OccurredAt = request.OccuredAt,
@@ -29,7 +41,7 @@ public class ComplaintUpdatedEventConsumer: IConsumer<ComplaintUpdatedEvent>
             UserName = request.AuditData!.PerformedByUserName,
             EntityId = request.EmployeeId,
             EntityName = "Complaint",
-            Action = "complaint.updated",
+            Action = action,
             ServiceName = "QueueService",
             AuditLogDetails = request.AuditData!.Changes
         };

@@ -24,7 +24,7 @@ public class CustomerCreatedEventConsumer : IConsumer<CustomerCreatedEvent>
 
         var auditLog = new AuditLog
         {
-            OccurredAt = request.OccuredAt.DateTime,
+            OccurredAt = request.OccuredAt,
             UserId = request.AuditData!.PerformedByUserId,
             UserName = request.AuditData!.PerformedByUserName,
             EntityId = request.CustomerId,

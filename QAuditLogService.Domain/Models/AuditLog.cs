@@ -18,7 +18,7 @@ public class AuditLog
 
     public int? EntityId { get; set; }
 
-    public DateTime OccurredAt { get; set; } = DateTime.UtcNow;
+    public DateTimeOffset OccurredAt { get; set; } 
     
     public List<AuditEventLogDetails> AuditLogDetails { get; set; } = [];
     

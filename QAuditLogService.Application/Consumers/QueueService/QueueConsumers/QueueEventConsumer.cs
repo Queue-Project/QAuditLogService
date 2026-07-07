@@ -27,7 +27,7 @@ public class QueueEventConsumer : IConsumer<QueueEvent>
 
         if (request.EventType == QueueEventType.Created)
         {
-            auditLog.OccurredAt = request.OccurredAt.DateTime;
+            auditLog.OccurredAt = request.OccurredAt.ToUniversalTime();
             auditLog.UserId = request.AuditData!.PerformedByUserId;
             auditLog.UserName = request.AuditData!.PerformedByUserName;
             auditLog.EntityId = request.QueueId;
@@ -42,7 +42,7 @@ public class QueueEventConsumer : IConsumer<QueueEvent>
             switch (request.Status)
             {
                 case UpdatedQueueStatus.Confirmed:
-                    auditLog.OccurredAt = request.OccurredAt.DateTime;
+                    auditLog.OccurredAt = request.OccurredAt.ToUniversalTime();
                     auditLog.UserId = request.AuditData!.PerformedByUserId;
                     auditLog.UserName = request.AuditData!.PerformedByUserName;
                     auditLog.EntityId = request.QueueId;
@@ -52,7 +52,7 @@ public class QueueEventConsumer : IConsumer<QueueEvent>
                     auditLog.AuditLogDetails = request.AuditData!.Changes;
                     break;
                 case UpdatedQueueStatus.Completed:
-                    auditLog.OccurredAt = request.OccurredAt.DateTime;
+                    auditLog.OccurredAt = request.OccurredAt.ToUniversalTime();
                     auditLog.UserId = request.AuditData!.PerformedByUserId;
                     auditLog.UserName = request.AuditData!.PerformedByUserName;
                     auditLog.EntityId = request.QueueId;
@@ -62,7 +62,7 @@ public class QueueEventConsumer : IConsumer<QueueEvent>
                     auditLog.AuditLogDetails = request.AuditData!.Changes;
                     break;
                 case UpdatedQueueStatus.CanceledByEmployee:
-                    auditLog.OccurredAt = request.OccurredAt.DateTime;
+                    auditLog.OccurredAt = request.OccurredAt.ToUniversalTime();
                     auditLog.UserId = request.AuditData!.PerformedByUserId;
                     auditLog.UserName = request.AuditData!.PerformedByUserName;
                     auditLog.EntityId = request.QueueId;
@@ -72,7 +72,7 @@ public class QueueEventConsumer : IConsumer<QueueEvent>
                     auditLog.AuditLogDetails = request.AuditData!.Changes;
                     break;
                 case UpdatedQueueStatus.CanceledByCustomer:
-                    auditLog.OccurredAt = request.OccurredAt.DateTime;
+                    auditLog.OccurredAt = request.OccurredAt.ToUniversalTime();
                     auditLog.UserId = request.AuditData!.PerformedByUserId;
                     auditLog.UserName = request.AuditData!.PerformedByUserName;
                     auditLog.EntityId = request.QueueId;

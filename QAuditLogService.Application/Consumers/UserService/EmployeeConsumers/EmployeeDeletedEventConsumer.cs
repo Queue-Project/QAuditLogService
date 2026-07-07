@@ -25,7 +25,7 @@ public class EmployeeDeletedEventConsumer : IConsumer<EmployeeDeletedEvent>
 
         var auditLog = new AuditLog
         {
-            OccurredAt = request.OccurredAt.DateTime,
+            OccurredAt = request.OccurredAt,
             UserId = request.AuditData!.PerformedByUserId,
             UserName = request.AuditData!.PerformedByUserName,
             EntityId = request.EmployeeId,
