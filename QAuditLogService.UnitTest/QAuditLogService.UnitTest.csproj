@@ -22,4 +22,8 @@
         <Using Include="Xunit"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\QAuditLogService.Infrastructure\QAuditLogService.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>

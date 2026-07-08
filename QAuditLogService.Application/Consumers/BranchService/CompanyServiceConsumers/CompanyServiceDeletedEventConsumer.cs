@@ -8,10 +8,10 @@ namespace QAuditLogService.Application.Consumers.BranchService.CompanyServiceCon
 
 public class CompanyServiceDeletedEventConsumer: IConsumer<CompanyServiceDeletedEvent>
 {
-    private readonly ILogger<CompanyServiceDeletedEvent> _logger;
+    private readonly ILogger<CompanyServiceDeletedEventConsumer> _logger;
     private readonly IAuditLogDbContext _dbContext;
 
-    public CompanyServiceDeletedEventConsumer(ILogger<CompanyServiceDeletedEvent> logger, IAuditLogDbContext dbContext)
+    public CompanyServiceDeletedEventConsumer(ILogger<CompanyServiceDeletedEventConsumer> logger, IAuditLogDbContext dbContext)
     {
         _logger = logger;
         _dbContext = dbContext;
