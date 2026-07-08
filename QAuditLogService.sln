@@ -20,6 +20,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QAuditLogService.Contracts"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAuditLogService.Contracts", "QAuditLogService.Contracts\QAuditLogService.Contracts.csproj", "{395238B1-44D8-4B0C-9DC6-30269BC82FA1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QAuditLogService.UnitTest", "QAuditLogService.UnitTest", "{BB0C0662-4B74-4D1D-9A69-090513EF7F68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAuditLogService.UnitTest", "QAuditLogService.UnitTest\QAuditLogService.UnitTest.csproj", "{0662F4F7-E09F-4408-999F-2D1F927EA62B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,7 @@ Global
 		{15F459C7-C064-4F8F-B984-0E0685FDEDFD} = {E0C7D2D7-7BB5-4E8C-9A9A-A5D208FF0E16}
 		{156CEBEC-D1C3-4198-A6FE-FED349E459DE} = {C4925A47-7B05-49B9-A72D-AA824C7A9B70}
 		{395238B1-44D8-4B0C-9DC6-30269BC82FA1} = {D9B392CD-06DD-4790-AB3A-D203B227D7E3}
+		{0662F4F7-E09F-4408-999F-2D1F927EA62B} = {BB0C0662-4B74-4D1D-9A69-090513EF7F68}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DB5A299C-6B20-4CBE-BD4D-11C5749F8293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -53,5 +58,9 @@ Global
 		{395238B1-44D8-4B0C-9DC6-30269BC82FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{395238B1-44D8-4B0C-9DC6-30269BC82FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{395238B1-44D8-4B0C-9DC6-30269BC82FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0662F4F7-E09F-4408-999F-2D1F927EA62B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0662F4F7-E09F-4408-999F-2D1F927EA62B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0662F4F7-E09F-4408-999F-2D1F927EA62B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0662F4F7-E09F-4408-999F-2D1F927EA62B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
