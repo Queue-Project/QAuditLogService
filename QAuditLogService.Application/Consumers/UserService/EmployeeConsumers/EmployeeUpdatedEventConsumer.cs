@@ -8,10 +8,10 @@ namespace QAuditLogService.Application.Consumers.UserService.EmployeeConsumers;
 
 public class EmployeeUpdatedEventConsumer: IConsumer<EmployeeUpdatedEvent>
 {
-    private readonly ILogger<EmployeeCreatedEventConsumer> _logger;
+    private readonly ILogger<EmployeeUpdatedEventConsumer> _logger;
     private readonly IAuditLogDbContext _dbContext;
 
-    public EmployeeUpdatedEventConsumer(ILogger<EmployeeCreatedEventConsumer> logger, IAuditLogDbContext dbContext)
+    public EmployeeUpdatedEventConsumer(ILogger<EmployeeUpdatedEventConsumer> logger, IAuditLogDbContext dbContext)
     {
         _logger = logger;
         _dbContext = dbContext;
