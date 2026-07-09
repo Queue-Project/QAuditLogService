@@ -11,6 +11,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="BranchService.Contracts" Version="1.0.5" />
+      <PackageReference Include="MassTransit" Version="8.5.7" />
+      <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+      <PackageReference Include="MassTransit.RabbitMQ" Version="8.5.7" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.17" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.17">
         <PrivateAssets>all</PrivateAssets>
@@ -19,6 +23,8 @@
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.17" />
       <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.17" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.17" />
+      <PackageReference Include="QueueService.Contracts" Version="1.0.2" />
+      <PackageReference Include="UserService.Contracts" Version="1.0.3" />
     </ItemGroup>
 
 </Project>
