@@ -200,7 +200,8 @@ PublishScripts/
 *.nuget.targets
 
 
-
+!QAuditLogServiceLocalNuget/
+!QAuditLogServiceLocalNuget/*.nupkg
 
 # Microsoft Azure Build Output
 csx/

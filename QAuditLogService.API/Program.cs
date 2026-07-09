@@ -48,7 +48,7 @@ builder.Services.AddMassTransit(x =>
     {
         var configuration = context.GetService<IConfiguration>();
 
-        var host = configuration?["RabbitMQ:Host"] ?? "localhost";
+        var host = configuration?["RabbitMQ:Host"] ?? "queue-rabbitmq";
         var port = configuration?.GetValue<ushort?>("RabbitMQ:Port") ?? 5672;
         var username = configuration?["RabbitMQ:Username"] ?? "guest";
         var password = configuration?["RabbitMQ:Password"] ?? "guest";
@@ -80,7 +80,7 @@ builder.Services.AddDbContext<AuditLogDbContext>(options =>
 var app = builder.Build();
 
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName== "Docker")
 {
     app.UseSwagger();
     app.UseSwaggerUI();
